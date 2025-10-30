@@ -1,28 +1,33 @@
-import { useState } from 'react'
+import React from 'react';
+import Header from './components/Header';
+import DecorativeGrid from './components/DecorativeGrid';
+import DownloadLauncher from './components/DownloadLauncher';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="relative min-h-screen overflow-hidden">
+      <DecorativeGrid />
+      <Header />
+      <main className="relative z-10">
+        <section className="mx-auto max-w-6xl px-6 pt-8 pb-20">
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Elegant, Animated Report Modal
+            </h1>
+            <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              A refined modal experience with motion, progress, and polished states — ready to impress your users.
+            </p>
+          </div>
+          <div className="mt-10">
+            <DownloadLauncher />
+          </div>
+        </section>
+      </main>
+      <footer className="relative z-10 py-8 text-center text-xs text-gray-500 dark:text-gray-400">
+        Built with care — enjoy the vibes.
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
